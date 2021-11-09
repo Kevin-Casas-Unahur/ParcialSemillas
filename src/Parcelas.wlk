@@ -31,6 +31,6 @@ class ParcelaEcologica inherits Parcela {
 
 class ParcelaIndustrial inherits Parcela {
 	
-	override method seAsociaBien(planta) = planta.esFuerte() and plantas.size() < 2
+	override method seAsociaBien(planta) = planta.esFuerte() and plantas.size() <= 2
 }
 
