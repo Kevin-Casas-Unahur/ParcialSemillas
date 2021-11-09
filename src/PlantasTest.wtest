@@ -1,0 +1,40 @@
+import Plantas.*
+
+describe "tests de Menta" {
+	
+	test "menta da semillas" {
+		const menta1 = new Menta(altura = 1)
+		assert.equals(3, menta1.espacioOcupado())
+		assert.that(menta1.daNuevasSemillas())
+	}
+	
+	test "menta no da semillas" {
+		const menta2 = new Menta(altura = 0.3)
+		assert.equals(0.9, menta2.espacioOcupado())
+		assert.notThat(menta2.daNuevasSemillas())
+	}
+}
+
+describe "test de Soja" {
+	
+	test "comprobar soja" {
+		const soja1 = new Soja(altura = 0.6, anoDeObtencion = 2009)
+		assert.equals(7, soja1.toleraHorasDeSol())
+		assert.notThat(soja1.daNuevasSemillas())
+		assert.equals(0.3, soja1.espacioOcupado())
+	}
+}
+
+describe "tests de Quinoa" {
+	
+	test "quinoa da semillas por altura " {
+		const quinoa1 = new Quinoa(anoDeObtencion = 2010, toleraHorasDeSol = 12)
+		assert.that(quinoa1.daNuevasSemillas())
+	}
+	
+	test "quinoa da semillas por edad" {
+		const quinoa1 = new Quinoa(anoDeObtencion = 2001, toleraHorasDeSol = 9)
+		assert.that(quinoa1.daNuevasSemillas())
+	}
+}
+	
