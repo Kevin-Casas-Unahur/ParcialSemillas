@@ -19,6 +19,7 @@ class Parcela {
 		}
 	}
 	method hayAlgunaPlantaConPocaTolerancia() {return plantas.any({p => (horasDeSol - p.toleraHorasDeSol() ) >= 2} )}
+	
 	method seAsociaBien(planta)
 	method cantDePlantasBienAsociadas() = plantas.count({p => self.seAsociaBien(p) } )
 }
